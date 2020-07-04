@@ -1,0 +1,50 @@
+#Example_1
+class person(object):
+    def __init__(self, name):
+        self.name = name
+
+    def getname(self):
+        return self.name
+
+    def isemployee(self):
+        return False
+
+class employee(person):
+
+    def isemployee(self):
+        return True
+
+
+
+n=employee('Ayush')
+print(n.isemployee())
+print(n.getname())
+
+
+#Example_2
+
+class person (object):
+    def __init__(self,name,id):
+        self.name = name
+        self.id = id
+
+    def getname(self):
+        return self.name
+    def getid(self):
+        return self.id
+
+class employee(person):
+    def __init__ (self,name,id,age,address):
+        self.age = age
+        self.address = address
+
+        person.__init__(self,name,id)
+
+    def getage(self):
+        return self.age
+    def getadd(self):
+        return self.address
+
+
+a=employee("Ayush",12345,21,"Aligarh")
+print(a.getname(),a.getid(),a.getage(),a.getadd())
